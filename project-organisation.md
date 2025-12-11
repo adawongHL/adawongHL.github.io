@@ -1,23 +1,29 @@
-app/
-  page.tsx               <-- Landing page
-  layout.tsx             <-- Global layout
-  projects/
-    [slug]/page.tsx      <-- Dynamic project detail page
-  blog/
-    [slug]/page.tsx      <-- Dynamic blog detail page
-components/
-  Header.tsx
-  Section.tsx            <-- Optional wrapper for layout/spacing
-  PostCard.tsx           <-- Reusable card for both projects and blog
-data/                    <-- Contains the raw content of posts 
-  projects/              
-    project1.md          
-  blog/
-    post1.md
-    post2.md
-    ...                  <-- Markdown files for blog posts
-public/
-  images/                <-- Project/blog images, logos etc...
+package.json
+package-lock.json
+README.md
+src/
+  app/
+    page.tsx               <-- Landing page
+    layout.tsx             <-- Global layout
+    projects/
+      [slug]/page.tsx      <-- Dynamic project detail page
+    blog/
+      [slug]/page.tsx      <-- Dynamic blog detail page
+  components/
+    Header.tsx
+    Section.tsx            <-- Optional wrapper for layout/spacing
+    PostCard.tsx           <-- Reusable card for both projects and blog
+  data/                    <-- Contains the raw content of posts 
+    projects/              
+      project1.md          
+    blog/
+      post1.md
+      post2.md
+      ...                  <-- Markdown files for blog posts
+  utils/                   <-- Utility and Helper Functions
+    helperFunction1.ts
+  public/
+    images/                <-- Project/blog images, logos etc...
 
 
 Questions: 
