@@ -3,6 +3,7 @@ title: "Chat App"
 description: "A real-time chat application using WebSockets"
 date: "2025-12-10"
 image: "/images/heart.png"
+highlight: false
 ---
 
 # Chat App

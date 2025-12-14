@@ -3,6 +3,7 @@ title: "Tailwind CSS Tips"
 description: "Some useful tips for designing with Tailwind CSS"
 date: "2025-12-07"
 image: "/images/heart.png"
+highlight: false
 ---
 
 # Tailwind CSS Tips

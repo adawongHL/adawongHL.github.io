@@ -3,6 +3,7 @@ title: "Weather Dashboard"
 description: "A responsive weather dashboard using a public API"
 date: "2025-11-28"
 image: "/images/heart.png"
+highlight: true
 ---
 
 # Weather Dashboard

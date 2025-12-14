@@ -7,6 +7,8 @@ import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
 export default function HomePage() {
   const projectPosts = getAllProjectPosts();
   const blogPosts = getAllBlogPosts();
+  const highlightProjects = projectPosts.filter(post => {return post.frontmatter.highlight === true})
+  const highlightBlogs = blogPosts.filter(post => {return post.frontmatter.highlight === true})
 
   return (
     <main className="max-w-6xl mx-auto p-4">
@@ -25,7 +27,18 @@ export default function HomePage() {
       <section id="highlights" className="mb-16">
         <h2 className="text-3xl font-bold mb-6">Highlights</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projectPosts.map(post => (
+          {   
+          highlightProjects.map(post => (
+            <PostCard
+              key={post.slug}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              image={post.frontmatter.image}
+              href={`/projects/${post.slug}`}
+            />
+          ))}
+          {
+          highlightBlogs.map(post => (
             <PostCard
               key={post.slug}
               title={post.frontmatter.title}

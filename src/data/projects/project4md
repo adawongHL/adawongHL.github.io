@@ -3,6 +3,7 @@ title: "Portfolio Website"
 description: "My personal developer portfolio built with Next.js"
 date: "2025-12-02"
 image: "/images/heart.png"
+highlight: true
 ---
 
 # Portfolio Website

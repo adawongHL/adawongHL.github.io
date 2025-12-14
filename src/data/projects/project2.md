@@ -3,6 +3,7 @@ title: "Todo App"
 description: "A simple Todo application with React and local storage"
 date: "2025-11-20"
 image: "/images/heart.png"
+highlight: true
 ---
 
 # Todo App
