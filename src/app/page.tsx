@@ -1,6 +1,7 @@
 // src/app/page.tsx (Landing Page)
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
+import WorldMosaic from "@/components/MosaicMap";
 import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
 
 export default function HomePage() {
@@ -11,15 +12,16 @@ export default function HomePage() {
     <main className="max-w-6xl mx-auto p-4">
       {/* Hero Section */}
       <header className="mb-16 text-center">
-        <h1 className="text-5xl font-bold mb-4">Welcome to My Website</h1>
-        <p className="text-lg text-gray-600">Hi, I'm Ada!</p>
+        <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
+        <p className="text-lg text-gray-600">Email: ...</p>
         <p className="text-lg text-gray-600">I like to make stuff</p>
       </header>
 
       {/* TODO: Map Graphics Section */}
+      <WorldMosaic/>
 
 
-      {/* Highlights Section */}
+      {/* Highlights Section (To Curate) */}
       <section id="highlights" className="mb-16">
         <h2 className="text-3xl font-bold mb-6">Highlights</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
