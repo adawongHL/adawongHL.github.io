@@ -13,7 +13,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <article className="prose max-w-3xl mx-auto p-4">
       <h1>{post.frontmatter.title}</h1>
       {post.frontmatter.image && (
-        <img src={post.frontmatter.image} alt={post.frontmatter.title} className="mb-4 rounded"/>
+        <img src={post.frontmatter.image} alt={post.frontmatter.title} className="mb-4"/>
       )}
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </article>

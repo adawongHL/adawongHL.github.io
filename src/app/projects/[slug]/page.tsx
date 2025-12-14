@@ -13,7 +13,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     <article className="prose max-w-3xl mx-auto p-4">
       <h1>{project.frontmatter.title}</h1>
       {project.frontmatter.image && (
-        <img src={project.frontmatter.image} alt={project.frontmatter.title} className="mb-4 rounded"/>
+        <img src={project.frontmatter.image} alt={project.frontmatter.title} className="mb-4"/>
       )}
       <div dangerouslySetInnerHTML={{ __html: project.content }} />
     </article>

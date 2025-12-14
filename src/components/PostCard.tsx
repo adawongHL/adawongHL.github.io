@@ -3,14 +3,14 @@
 // TODO: Hover over PostCard to see % bar for tech stack
 import Link from "next/link";
 
-type PostCardProps = {
+type PostProps = {
   title: string;
   description: string;
   image?: string;
   href: string;
 };
 
-export default function PostCard({ title, description, image, href }: PostCardProps) {
+export default function PostCard({ title, description, image, href }: PostProps) {
   return (
     <Link href={href}>
       <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition p-4 cursor-pointer">
