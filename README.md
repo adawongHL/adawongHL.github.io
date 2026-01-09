@@ -1,1 +1,1 @@
-## Personal Portfolio - Ada Wong
+## Personal Portfolio
