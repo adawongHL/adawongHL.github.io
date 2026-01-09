@@ -12,8 +12,8 @@ type PostProps = {
 
 export default function PostCard({ title, description, image, href }: PostProps) {
   return (
-    <Link href={href}>
-      <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition p-4 cursor-pointer">
+    <Link className="border transition duration-200  hover:border-muted p-4" href={href}>
+      <div className="cursor-pointer">
         {image && <img src={image} alt={title} className="mb-4 w-full h-48 object-cover rounded"/>}
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <p>{description}</p>

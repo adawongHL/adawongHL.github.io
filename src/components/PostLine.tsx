@@ -14,7 +14,7 @@ export default function PostLine({ title, href, date }: PostProps) {
 
   return (
     <Link href={href}>
-        <div className="font-monda flex flex-row justify-between hover:underline hover:bg-secondary transition duration-200">
+        <div className="font-monda flex flex-row justify-between transition duration-1000 hover:underline underline-offset-8 decoration-primary">
             <h3 className="text-xl mb-2">{title}</h3>
             <p className="font-mono">{year}.{month}.{day}</p>
         </div>

@@ -9,7 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@types/geojson": "^7946.0.16",
     "d3": "^7.9.0",
+    "d3-geo": "^3.1.1",
     "gray-matter": "^4.0.3",
     "next": "^16.0.10",
     "postcss": "^8.5.6",

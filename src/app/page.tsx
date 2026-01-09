@@ -1,7 +1,8 @@
 // src/app/page.tsx (Landing Page)
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
-import WorldMosaic from "@/components/MosaicMap";
+import TopNav from "@/components/TopNav";
+// import MosaicMap from "@/components/MosaicMap";
 import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
 
 export default function HomePage() {
@@ -12,21 +13,28 @@ export default function HomePage() {
 
   return (
     <main className="max-w-6xl mx-auto p-4">
+      {/* Top Icons: email, github */}
+      <TopNav />
+
       {/* Hero Section */}
-      <header className="mb-16 text-center">
-        <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
-        <p className="text-lg text-gray-600">Email: ...</p>
-        <p className="text-lg text-gray-600">I like to make stuff</p>
-      </header>
+      <div className="flex">
+        <header className="mb-16 text-left font-monda">
+          <h1 className="text-5xl font-bold mb-4">Ada's Fieldnotes</h1>
+          <p className="text-lg text-gray-600">About me oneliner...</p>
+          <p className="text-lg text-gray-600">I like to make stuff</p>
+        </header>
 
-      {/* TODO: Map Graphics Section */}
-      <WorldMosaic/>
+        <div>MAP HERE</div>
+        {/* TODO: Map Graphics Section */}
 
+      </div>
+
+      
 
       {/* Highlights Section (To Curate) */}
       <section id="highlights" className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">Highlights</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <h2 className="text-3xl font-bold font-monda mb-6">Highlights</h2>
+        <div className="grid grid-cols-4 gap-0 overflow-hidden">
           {   
           highlightProjects.map(post => (
             <PostCard
@@ -52,7 +60,7 @@ export default function HomePage() {
 
       {/* Projects Section */}
       <section id="projects" className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">Projects</h2>
+        <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
         {projectPosts.map(post => (
             <PostLine
               key={post.slug}
@@ -65,7 +73,7 @@ export default function HomePage() {
 
       {/* Blog Section */}
       <section id="blog" className="mb-16">
-        <h2 className="text-3xl font-bold mb-6">Blog</h2>
+        <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2>
         {blogPosts.map(post => (
             <PostLine
               key={post.slug}

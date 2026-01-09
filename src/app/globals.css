@@ -28,8 +28,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #272b32;
+  --background: #F3FFFF;
+  --foreground: #152845;
   /* --primary: #e3f5ed;
   --secondary: #42feae;
   --muted: #94a3b8;
@@ -51,12 +51,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --font-monda: "Monda", system-ui, sans-serif;
-    --background: #272b32;
-    --foreground: #e3f5ed;  /* text */
-    --primary: #e3f5ed;
-    --secondary: #42feae;
-    /* --secondary: #ff5f5f; */
-    --muted: #94a3b8;
+    --background: #F3FFFF;
+    --foreground: #152845;  /* text */
+    --primary: #EC4443;
+    --secondary: #245FAE;
+    --muted: #C8E6F9;
     --color-success: var(--green-500);
     --color-error: var(--red-500);
     --color-warning: var(--amber-500);
