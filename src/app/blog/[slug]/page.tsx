@@ -2,6 +2,13 @@
 import { getAllBlogPosts } from "@/utils/posts";
 import { notFound } from "next/navigation";
 
+export async function generateStaticParams() {
+  const blogs = getAllBlogPosts();
+  return blogs.map(blog => ({
+    slug: blog.slug,
+  }));
+}
+
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const posts = getAllBlogPosts();
