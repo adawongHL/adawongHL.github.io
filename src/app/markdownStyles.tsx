@@ -7,3 +7,10 @@ export const headingStyles: Record<1 | 2 | 3, string> = {
 export const CustomP = ({ node, ...props }) => (
 <p className="my-8 leading-relaxed text-foreground" {...props} />
 )
+
+// table of contents - heading item
+export type TocItem = {
+  id: string
+  text: string
+  level: 1 | 2 | 3
+}

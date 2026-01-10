@@ -27,7 +27,7 @@ export default function HomePage() {
         </header>
 
         {/* TODO: Map Graphics Section */}
-        <MosaicMap data={data} width={800} height={500} />
+        <MosaicMap data={data} width={700} height={500} />
 
       </div>
 
