@@ -2,7 +2,8 @@
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
 import TopNav from "@/components/TopNav";
-// import MosaicMap from "@/components/MosaicMap";
+import MosaicMap from "@/components/MosaicMap";
+import { data } from "@/components/MapData";
 import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
 
 export default function HomePage() {
@@ -22,10 +23,11 @@ export default function HomePage() {
           <h1 className="text-5xl font-bold mb-4">Ada's Fieldnotes</h1>
           <p className="text-lg text-gray-600">About me oneliner...</p>
           <p className="text-lg text-gray-600">I like to make stuff</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </header>
 
-        <div>MAP HERE</div>
         {/* TODO: Map Graphics Section */}
+        <MosaicMap data={data} width={800} height={500} />
 
       </div>
 

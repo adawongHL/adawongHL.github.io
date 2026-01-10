@@ -1,46 +1,70 @@
-"use client";
+import * as d3 from 'd3';
+import { FeatureCollection } from 'geojson';
 
-import { useEffect, useRef } from "react";
-import * as d3 from "d3";
-import type { FeatureCollection } from "geojson";
+type MapProps = {
+  width: number;
+  height: number;
+  data: FeatureCollection;
+};
 
-export default function WorldMosaic() {
-  const ref = useRef<SVGSVGElement | null>(null);   // initlaly null, later an <svg> DOM elem
 
-  // use D3 to paint inside the created "container"
-  useEffect(() => {
-    if (!ref.current) return;
+export default function MosaicMap  ({ width, height, data }: MapProps) {
+  console.log("*** Mosaic Map loaded ***")
 
-    const width = 700;
-    const height = 360;
+  // data = data.features.filter(shape => shape.id === 'AUS' )
+  const projection = d3
+    .geoMercator()
+    .scale(width / (2*Math.PI))
+    .center([50, 10])
+    .translate([515,250]);
 
-    const svg = d3.select(ref.current);
-    svg.selectAll("*").remove();
+  const cellSize = 1;
+  const spacing = 5;
+  const points: { x: number; y: number }[] = []; // array of points to draw squares for
+  const path = d3.geoPath(projection);
 
-    svg
-      .attr("viewBox", `0 0 ${width} ${height}`)
-      .attr("width", "100%");
+  // loop through countries
+  for (let i = 0; i < data.features.length; i++) {
+    // find bounding box for each country
+    const [[x0, y0], [x1, y1]] = path.bounds(data.features[i]);
+    // loop through each point in bounding box
+    for (let y = y0; y < y1; y += spacing) {
+      for (let x = x0; x < x1; x += spacing) {
+        const geoPoint = projection.invert([x,y]); //  convert this point to longitude, latitude
+        if (!geoPoint) continue;
 
-    d3.json<FeatureCollection>("/world.geojson").then((world) => {
-      if (!world) return;
+        // if point lies within land area, include this point
+        if (d3.geoContains(data.features[i], geoPoint)) {
+          points.push({ x, y });
+        }
+      }
+    }
+  }
 
-      const projection = d3
-        .geoMercator()
-        .fitSize([width, height], world);
+  // now, points contains all the points to draw squares for
+  // iterate over each point, draw the tiny square
+  const tiles = points.map( (point, index) => 
+    <circle
+    key={index}
+    cx={point.x}
+    cy={point.y}
+    r={1}
+    fill="black"
+  />
+    // <rect 
+    // key={index}
+    // x={point.x}
+    // y={point.y}
+    // width={cellSize}
+    // height={cellSize}
+    // fill="red" />
+  )
 
-      const path = d3.geoPath(projection);
+  return (
+    <div className="">
+    <svg width={width} height={height} className="">
+  {tiles}
+</svg></div>
+  )
 
-      svg
-        .selectAll("path")
-        .data(world.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("fill", "#0a0b0a")
-        .attr("stroke", "#374151")
-        .attr("stroke-width", 0.5);
-    });
-  }, []);
-
-  return <svg ref={ref} />;   // assign svg here ("container")
-}
+};
