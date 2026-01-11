@@ -19,7 +19,7 @@ export default function HomePage() {
       <div className="flex">
         <header className="mb-16 text-left font-monda">
           <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
-          <p className="text-lg text-gray-600">🏔️ I like to build things</p>
+          <p className="text-lg text-gray-600">I like to build things 🏔️ </p>
         </header>
 
         {/* TODO: Map Graphics Section */}
