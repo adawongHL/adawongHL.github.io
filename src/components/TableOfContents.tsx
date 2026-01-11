@@ -1,39 +1,84 @@
+'use client';
 
-// heading in table of contents
 import { TocItem } from '@/app/markdownStyles';
+import { useEffect, useState } from 'react';
 
-// styles for h1, h2, h3, p  
 export const tocStyles: Record<1 | 2 | 3, string> = {
-    1: "ml-2",
-    2: "ml-6",
-    3: "ml-10",
-}
+  1: 'ml-2',
+  2: 'ml-6',
+  3: 'ml-10',
+};
 
 export default function TableOfContents({ headings }: { headings: TocItem[] }) {
-    return (
-    <div className='flex flex-col'>
-        {
-            headings.map(
-                (heading) => (
-                    <a 
-                    key={heading.id}
-                    href={`#${heading.id}`} 
-                    className={`${tocStyles[heading.level]} hover:underline`}>
-                        {heading.text}
-                    </a>
-                )
-            )
-        }
-    </div>);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  // set initial active heading to be the first one
+  useEffect(() => {
+    if (headings.length > 0) {
+      setActiveId(headings[0].id);
+    }
+  }, [headings]);
+
+  // observe heading that's actively viewed
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-10% 0px -80% 0px', // define our active viewport (top, right, bottom, left)
+      }
+    );
+
+    headings.forEach((heading) => {
+      const el = document.getElementById(heading.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [headings]);
+
+  // look out for scroll to bottom - highlight the last heading
+  useEffect(() => {
+    function onScroll() {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 10;
+  
+      if (scrolledToBottom && headings.length > 0) {
+        setActiveId(headings[headings.length - 1].id);
+      }
+    }
+  
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [headings]);
+  
+
+  return (
+    <nav className="flex flex-col space-y-1">
+      {headings.map((heading) => (
+        <a
+          key={heading.id}
+          href={`#${heading.id}`}
+          onClick={() => setActiveId(heading.id)}
+          className={`
+            ${tocStyles[heading.level]}
+            transition-colors
+            ${
+              activeId === heading.id
+                ? 'text-secondary font-semibold'
+                : 'text-muted-foreground hover:text-foreground'
+            }
+          `}
+        >
+          {heading.text}
+        </a>
+      ))}
+    </nav>
+  );
 }
-
-// iterate through each heading inside array headingStyles
-// for each heading: 
-//     render a <className= check its heading.level> for the heading
-
-// function to use is Array.map(function) because its able to apply a function
-// to each member inside of the array
-// even though .mpa returns an array, react is smart to render 
-// each member as a Component
-
-    
