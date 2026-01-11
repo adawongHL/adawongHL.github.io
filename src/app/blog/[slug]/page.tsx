@@ -12,28 +12,28 @@ export async function generateStaticParams() {
   }));
 }
 
-const toc: TocItem[] = [] // contains all headings; pass to TableOfContents component as prop later
-// factory function to create a new heading React component (tagged with id; format: function)
-// headingLevel is passed by me
-// children is passed from react markdown; contains the heading text; type ReactNode
-function makeHeading(level: 1|2|3) {
-  return function HeadingComponent( { children } ) {
-    const text = String(children);
-    const baseId = text.toLowerCase().replace('/\s+/g', '-').replace('/^[\w-]/g', '');
-    const id = baseId + `-${toc.length}`;
-    const TocItem = { id: id, text: text, level: level };
-    toc.push(TocItem); 
-    
-    const Tag = `h${level}` as const // h1 or h2 or h3 (dynamic HTML tag name)
-    return <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>{children}</Tag>
-  }
-}
-
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const posts = getAllBlogPosts();
   const post = posts.find((p) => p.slug === slug);
   // console.log("Content:", post.content, "****END");
+
+  const toc: TocItem[] = [] // contains all headings; pass to TableOfContents component as prop later
+  // factory function to create a new heading React component (tagged with id; format: function)
+  // headingLevel is passed by me
+  // children is passed from react markdown; contains the heading text; type ReactNode
+  function makeHeading(level: 1|2|3) {
+    return function HeadingComponent( { children } ) {
+      const text = String(children);
+      const baseId = text.toLowerCase().replace('/\s+/g', '-').replace('/^[\w-]/g', '');
+      const id = baseId + `-${toc.length}`;
+      const TocItem = { id: id, text: text, level: level };
+      toc.push(TocItem); 
+      
+      const Tag = `h${level}` as const // h1 or h2 or h3 (dynamic HTML tag name)
+      return <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>{children}</Tag>
+    }
+  }
   
   if (!post) return notFound();
 
