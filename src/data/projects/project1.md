@@ -2,7 +2,7 @@
 title: "Portfolio Website"
 description: "A personal portfolio website built with Next.js and Tailwind CSS"
 date: "2025-12-01"
-image: "/images/heart.png"
+image: "/images/line-abstract.jpg"
 highlight: true
 ---
 
