@@ -13,10 +13,8 @@ export default function HomePage() {
   const highlightBlogs = blogPosts.filter(post => {return post.frontmatter.highlight === true})
 
   return (
-    <main className="max-w-6xl mx-auto p-4">
-      {/* Top Icons: email, github */}
-      <TopNav />
-
+    <main className="">
+      
       {/* Hero Section */}
       <div className="flex">
         <header className="mb-16 text-left font-monda">
