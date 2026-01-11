@@ -15,7 +15,7 @@ export default function MosaicMap  ({ width, height, data }: MapProps) {
   const projection = d3
     .geoMercator()
     .scale(width / (2*Math.PI))
-    .center([50, 10])
+    .center([90, 50])
     .translate([515,250]);
 
   const cellSize = 1;
@@ -61,7 +61,7 @@ export default function MosaicMap  ({ width, height, data }: MapProps) {
   )
 
   return (
-    <div className="">
+    <div className="bg-red-100">
     <svg width={width} height={height} className="">
   {tiles}
 </svg></div>

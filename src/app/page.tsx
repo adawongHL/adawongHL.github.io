@@ -2,7 +2,7 @@
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
 import TopNav from "@/components/TopNav";
-import MosaicMap from "@/components/MosaicMap";
+// import MosaicMap from "@/components/MosaicMap";
 import { data } from "@/components/MapData";
 import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
 
@@ -19,11 +19,11 @@ export default function HomePage() {
       <div className="flex">
         <header className="mb-16 text-left font-monda">
           <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
-          <p className="text-lg text-gray-600">I like to build things</p>
+          <p className="text-lg text-gray-600">🏔️ I like to build things</p>
         </header>
 
         {/* TODO: Map Graphics Section */}
-        <MosaicMap data={data} width={700} height={500} />
+        {/* <MosaicMap data={data} width={700} height={500} /> */}
 
       </div>
 
