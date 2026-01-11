@@ -56,9 +56,9 @@
     --primary: #EC4443;
     --secondary: #245FAE;
     --muted: #C8E6F9;
-    --color-success: var(--green-500);
-    --color-error: var(--red-500);
-    --color-warning: var(--amber-500);
+    --green: #01BD76;
+    --error: var(--red-500);
+    --yellow: #FFF153;
 }
 
 body {

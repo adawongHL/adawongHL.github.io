@@ -14,7 +14,7 @@ export default function HomePage() {
 
   return (
     <main className="">
-      
+
       {/* Hero Section */}
       <div className="flex">
         <header className="mb-16 text-left font-monda">
@@ -34,7 +34,7 @@ export default function HomePage() {
       {/* Highlights Section (To Curate) */}
       <section id="highlights" className="mb-16">
         <h2 className="text-3xl font-bold font-monda mb-6">Highlights</h2>
-        <div className="grid grid-cols-4 gap-0 overflow-hidden">
+        <div className="grid grid-cols-4 gap-0">
           {   
           highlightProjects.map(post => (
             <PostCard
