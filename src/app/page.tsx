@@ -18,10 +18,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="flex">
         <header className="mb-16 text-left font-monda">
-          <h1 className="text-5xl font-bold mb-4">Ada's Fieldnotes</h1>
-          <p className="text-lg text-gray-600">About me oneliner...</p>
-          <p className="text-lg text-gray-600">I like to make stuff</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
+          <p className="text-lg text-gray-600">I like to build things</p>
         </header>
 
         {/* TODO: Map Graphics Section */}
