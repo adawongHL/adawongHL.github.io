@@ -14,10 +14,23 @@ export default function PostLine({ title, href, date }: PostProps) {
 
   return (
     <Link href={href}>
-        <div className="font-monda flex flex-row justify-between transition duration-1000 hover:underline underline-offset-8 decoration-primary">
-            <h3 className="text-xl mb-2">{title}</h3>
-            <p className="font-mono">{year}.{month}.{day}</p>
+      <div className="group font-monda flex flex-row justify-between items-end cursor-pointer">
+        
+        {/* Title */}
+        <div className="relative inline-block">
+          <h3 className="text-xl mb-2 group-hover:font-bold">{title}</h3>
+          <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
         </div>
+
+        {/* Date */}
+        <div className="relative inline-block font-mono">
+          <p className="group-hover:font-bold">
+            {year}.{month}.{day}
+          </p>
+          <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
+        </div>
+
+      </div>
     </Link>
   );
 }
