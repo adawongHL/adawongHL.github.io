@@ -1,6 +1,7 @@
 // src/app/page.tsx (Landing Page)
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
+import Header from "./Header";
 import TopNav from "@/components/TopNav";
 // import MosaicMap from "@/components/MosaicMap";
 import { data } from "@/components/MapData";
@@ -16,17 +17,7 @@ export default function HomePage() {
     <main className="">
 
       {/* Hero Section */}
-      <div className="flex">
-        <header className="mb-16 text-left font-monda">
-          <h1 className="text-5xl font-bold mb-4">Hi, I'm Ada!</h1>
-          <p className="text-lg text-gray-600">I like to build things 🏔️ </p>
-        </header>
-
-        {/* TODO: Map Graphics Section */}
-        {/* <MosaicMap data={data} width={700} height={500} /> */}
-
-      </div>
-
+      <Header />
       
 
       {/* Highlights Section (To Curate) */}
