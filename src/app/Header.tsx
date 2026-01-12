@@ -14,12 +14,12 @@ export default function Header() {
       <header className={`mb-16 text-left font-monda w-full`}>
         <h1
           className={`text-5xl font-bold mb-4 transition-opacity duration-500 ${fadeIn ? "opacity-100" : "opacity-0"}`}
-          style={{ transition: 'opacity 0.8s ease-in' }}>
+          style={{ transition: 'opacity 0.3s ease-in' }}>
           Hi, I'm Ada!
         </h1>
         <div className="flex items-end relative">
           <p className={`text-lg text-gray-600 w-3/10 ${fadeIn ? "opacity-100" : "opacity-0"}`}
-          style={{ transition: 'opacity 1.6s ease-in' }}>I like to build things 🏔️ </p>
+          style={{ transition: 'opacity 1s ease-in' }}>I like to build things 🏔️ </p>
         </div>
       </header>
     </div>
