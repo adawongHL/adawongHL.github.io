@@ -3,7 +3,7 @@ import { getAllProjectPosts } from "@/utils/posts";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import TableOfContents from "@/components/TableOfContents";
-import { headingStyles, CustomP, TocItem } from "@/app/markdownStyles";
+import { headingStyles, CustomP, TocItem, makeHeading } from "@/app/markdownStyles";
 
 export async function generateStaticParams() {
   const projects = getAllProjectPosts();
@@ -25,26 +25,26 @@ export default async function ProjectPage({
   // factory function to create a new heading React component (tagged with id)
   // headingLevel is passed by me
   // children is passed from react markdown; contains the heading text
-  function makeHeading(level: 1 | 2 | 3) {
-    return function HeadingComponent({ children }) {
-      const text = String(children);
-      const baseId = text
-        .toLowerCase()
-        .replace('/\\s+/g', '-')
-        .replace('/^[\\w-]/g', '');
-      const id = baseId + `-${toc.length}`;
+  // function makeHeading(level: 1 | 2 | 3) {
+  //   return function HeadingComponent({ children }: { children: React.ReactNode }) {
+  //     const text = String(children);
+  //     const baseId = text
+  //       .toLowerCase()
+  //       .replace('/\\s+/g', '-')
+  //       .replace('/^[\\w-]/g', '');
+  //     const id = baseId + `-${toc.length}`;
 
-      const TocItem = { id, text, level };
-      toc.push(TocItem);
+  //     const TocItem = { id, text, level };
+  //     toc.push(TocItem);
 
-      const Tag = `h${level}` as const;
-      return (
-        <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>
-          {children}
-        </Tag>
-      );
-    };
-  }
+  //     const Tag = `h${level}` as const;
+  //     return (
+  //       <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>
+  //         {children}
+  //       </Tag>
+  //     );
+  //   };
+  // }
 
   if (!project) return notFound();
 
@@ -65,12 +65,12 @@ export default async function ProjectPage({
 
           <div className="flex flex-col max-w-full">
             {/* title */}
-            <div className="bg-red-100 text-3xl whitespace-wrap font-bold">
+            <div className="text-3xl whitespace-wrap font-bold">
               {project.frontmatter.title}
             </div>
 
             {/* date */}
-            <div className="bg-green-100 mt-2 whitespace-wrap">
+            <div className="mt-2 whitespace-wrap">
               {project.frontmatter.date}
             </div>
           </div>
@@ -83,9 +83,9 @@ export default async function ProjectPage({
           <ReactMarkdown
             components={{
               p: CustomP,
-              h1: makeHeading(1),
-              h2: makeHeading(2),
-              h3: makeHeading(3),
+              h1: makeHeading(toc, 1),
+              h2: makeHeading(toc, 2),
+              h3: makeHeading(toc, 3),
             }}
           >
             {project.content}

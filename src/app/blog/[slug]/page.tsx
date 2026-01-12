@@ -3,7 +3,7 @@ import { getAllBlogPosts } from "@/utils/posts";
 import { notFound } from "next/navigation";
 import ReactMarkdown from 'react-markdown';
 import TableOfContents from '@/components/TableOfContents';
-import { headingStyles, CustomP, TocItem } from '@/app/markdownStyles';
+import { headingStyles, CustomP, TocItem, makeHeading } from '@/app/markdownStyles';
 
 export async function generateStaticParams() {
   const blogs = getAllBlogPosts();
@@ -22,18 +22,51 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   // factory function to create a new heading React component (tagged with id; format: function)
   // headingLevel is passed by me
   // children is passed from react markdown; contains the heading text; type ReactNode
-  function makeHeading(level: 1|2|3) {
-    return function HeadingComponent( { children } ) {
-      const text = String(children);
-      const baseId = text.toLowerCase().replace('/\s+/g', '-').replace('/^[\w-]/g', '');
-      const id = baseId + `-${toc.length}`;
-      const TocItem = { id: id, text: text, level: level };
-      toc.push(TocItem); 
+  // function makeHeading(level: 1|2|3) {
+  //   return function HeadingComponent( { children }: { children: React.ReactNode } ) {
+  //     const text = String(children);
+  //     const baseId = text.toLowerCase().replace('/\s+/g', '-').replace('/^[\w-]/g', '');
+  //     const id = baseId + `-${toc.length}`;
+  //     const TocItem = { id: id, text: text, level: level };
+  //     toc.push(TocItem); 
       
-      const Tag = `h${level}` as const // h1 or h2 or h3 (dynamic HTML tag name)
-      return <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>{children}</Tag>
-    }
-  }
+  //     const Tag = `h${level}` as const // h1 or h2 or h3 (dynamic HTML tag name)
+  //     return <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>{children}</Tag>
+  //   }
+  // }
+  // function makeHeading(level: 1 | 2 | 3) {
+  //   // 1. Accept all standard HTML attributes for a Heading Element
+  //   return function HeadingComponent({ 
+  //     children, 
+  //     ...props 
+  //   }: React.HTMLAttributes<HTMLHeadingElement>) {
+      
+  //     // 2. Edge case - children might be null/undefined or not a string
+  //     const text = children ? String(children) : '';
+      
+  //     const baseId = text
+  //       .toLowerCase()
+  //       .replace(/\s+/g, '-') // replace any whitespaces with -
+  //       .replace(/[^\w-]/g, ''); // remove punctuations
+      
+  //     const id = baseId + `-${toc.length}`;
+  
+  //     // push to TOC if there is actual text
+  //     if (text) {
+  //       const TocItem = { id, text, level };
+  //       toc.push(TocItem);
+  //     }
+  
+  //     const Tag = `h${level}` as const;
+      
+  //     return (
+  //       // 3. Pass the ...props through (important for libraries that inject classes/styles)
+  //       <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`} {...props}>
+  //         {children}
+  //       </Tag>
+  //     );
+  //   };
+  // }
   
   if (!post) return notFound();
 
@@ -50,10 +83,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
               <div className='flex flex-col max-w-full'>
                 {/* title */}
-                <div className="bg-red-100 text-3xl whitespace-wrap font-bold">{post.frontmatter.title}</div>
+                <div className="text-3xl whitespace-wrap font-bold">{post.frontmatter.title}</div>
 
                 {/* description */}
-                <div className="bg-green-100 mt-2 whitespace-wrap">{post.frontmatter.date}</div>
+                <div className="mt-2 whitespace-wrap">{post.frontmatter.date}</div>
               </div>
           </div>
 
@@ -63,9 +96,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <div className="prose">
               <ReactMarkdown components={{
               p: CustomP,
-              h1: makeHeading(1),
-              h2: makeHeading(2),
-              h3: makeHeading(3)
+              h1: makeHeading(toc, 1),
+              h2: makeHeading(toc, 2),
+              h3: makeHeading(toc, 3),
             }}>
                   {post.content}
               </ReactMarkdown></div>
