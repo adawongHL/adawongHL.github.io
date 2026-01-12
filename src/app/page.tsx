@@ -2,6 +2,8 @@
 import PostCard from "@/components/PostCard";
 import PostLine from "@/components/PostLine";
 import Header from "./Header";
+import ProjectCard from "@/components/ProjectCard";
+import { ProjectProps } from "@/components/ProjectCard";
 import TopNav from "@/components/TopNav";
 // import MosaicMap from "@/components/MosaicMap";
 import { data } from "@/components/MapData";
