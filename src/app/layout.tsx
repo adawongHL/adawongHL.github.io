@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 
+export const dynamic = 'force-static' // for github pages - force static site gen
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
