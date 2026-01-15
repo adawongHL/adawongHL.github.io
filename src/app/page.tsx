@@ -7,12 +7,14 @@ import { ProjectProps } from "@/components/ProjectCard";
 import TopNav from "@/components/TopNav";
 // import MosaicMap from "@/components/MosaicMap";
 import { data } from "@/components/MapData";
-import { getAllBlogPosts, getAllProjectPosts } from "@/utils/posts";
+import { getAllBlogPosts, getAllProjects } from "@/utils/posts";
 
 export default function HomePage() {
-  const projectPosts = getAllProjectPosts();
+  // const projectPosts = getAllProjectPosts();
+  const projects = getAllProjects();
+  console.log(projects);
   const blogPosts = getAllBlogPosts();
-  const highlightProjects = projectPosts.filter(post => {return post.frontmatter.highlight === true})
+  // const highlightProjects = projectPosts.filter(post => {return post.frontmatter.highlight === true})
   const highlightBlogs = blogPosts.filter(post => {return post.frontmatter.highlight === true})
 
   return (
@@ -24,38 +26,27 @@ export default function HomePage() {
 
       {/* Highlights Section (To Curate) */}
       <section id="highlights" className="mb-16">
-        <h2 className="text-3xl font-bold font-monda mb-6">Highlights</h2>
-        
-        { 
-          highlightProjects.length === 0 && highlightBlogs.length === 0 ? (
-            <p className="font-monda w-full">To be done...</p>
-          ) : (
-            <div className="grid grid-cols-4 gap-0">
-              {highlightProjects.map(post => (
-                <PostCard
-                  key={post.slug}
-                  title={post.frontmatter.title}
-                  description={post.frontmatter.description}
-                  image={post.frontmatter.image}
-                  href={`/projects/${post.slug}`}
-                />
-              ))}
-              {highlightBlogs.map(post => (
-                <PostCard
-                  key={post.slug}
-                  title={post.frontmatter.title}
-                  description={post.frontmatter.description}
-                  image={post.frontmatter.image}
-                  href={`/projects/${post.slug}`}
-                />
-              ))}
-            </div>
-          )
+        <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
+
+        {/* getAlProjects() (DONE) --> create a ProjectCard for each project */}
+        {
+          projects.length === 0 ? 
+          <p className="font-monda w-full">To be done...</p> :
+          <div className="grid grid-cols-4 gap-0">
+          { projects.map(project => (
+            <ProjectCard 
+              title={project.frontmatter.title}
+              description={project.frontmatter.description}
+              image={project.frontmatter.image}
+              tags={project.frontmatter.tags}
+              />
+          ))}
+          </div>
         }
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="mb-16">
+      {/* Old Projects Section */}
+      {/* <section id="projects" className="mb-16">
         <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
         {
           projectPosts.length > 0 ?
@@ -67,7 +58,7 @@ export default function HomePage() {
               href={`/projects/${post.slug}`}
             />
           )) : <p className="font-monda w-full">To be done...</p>}
-      </section>
+      </section> */}
 
       {/* Blog Section */}
       <section id="blog" className="mb-16">
