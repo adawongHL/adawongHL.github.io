@@ -7,7 +7,7 @@ import matter from "gray-matter";
 function readMarkdownDir(directory: string) {
   const fileNames = fs.readdirSync(directory);
 
-  const posts = fileNames.map((fileName) => {
+  const items = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");   // remove .md extension
     const fullPath = path.join(directory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -20,7 +20,7 @@ function readMarkdownDir(directory: string) {
     };
   });
 
-  return posts.sort(
+  return items.sort(
     (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
   );
 }
@@ -30,8 +30,8 @@ export function getAllBlogPosts() {
   return readMarkdownDir(blogDir);
 }
 
-export function getAllProjectPosts() {
+// Obsolete: Projects aren't in posts anymore
+export function getAllProjects() {
   const projectDir = path.join(process.cwd(), "src/data/projects");
   return readMarkdownDir(projectDir);
 }
-
