@@ -1,12 +1,12 @@
 // src/app/project/[slug]/page.tsx
-import { getAllProjectPosts } from "@/utils/posts";
+import { getAllProjects } from "@/utils/posts";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import TableOfContents from "@/components/TableOfContents";
 import { headingStyles, CustomP, TocItem, makeHeading } from "@/app/markdownStyles";
 
 export async function generateStaticParams() {
-  const projects = getAllProjectPosts();
+  const projects = getAllProjects();
   return projects.map(project => ({
     slug: project.slug,
   }));
@@ -18,7 +18,7 @@ export default async function ProjectPage({
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const projects = getAllProjectPosts();
+  const projects = getAllProjects();
   const project = projects.find((p) => p.slug === slug);
 
   const toc: TocItem[] = []; // contains all headings; pass to TableOfContents component as prop later
