@@ -6,7 +6,7 @@ image: "/images/line-abstract.jpg"
 tags: {
     "</>": "https://adawonghl.github.io/",
     "Demo": "https://adawonghl.github.io/",
-    "Blog": "01-portfolio"
+    "Blog": "blog/01-portfolio"
 }
 ---
 
