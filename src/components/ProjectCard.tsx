@@ -9,7 +9,7 @@ export type ProjectProps = {
 
 export default function ProjectCard({ title, description, image, tags }: ProjectProps) {
   return (
-    <div className="flex flex-col border border-muted rounded">
+    <div className="flex flex-col border border-muted rounded w-min">
       {image && (
           <img
             src={image}

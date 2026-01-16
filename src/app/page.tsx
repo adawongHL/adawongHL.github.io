@@ -22,17 +22,19 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <Header />
-      
+
+      {/* <div className="flex flex-col md:flex-row"> */}
+      <div className="grid md:grid-cols-2 grid-cols-1">
 
       {/* Highlights Section (To Curate) */}
-      <section id="highlights" className="mb-16">
+      <section id="highlights" className="mb-16 w-full">
         <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
 
         {/* getAlProjects() (DONE) --> create a ProjectCard for each project */}
         {
           projects.length === 0 ? 
           <p className="font-monda w-full">To be done...</p> :
-          <div className="grid grid-cols-4 gap-0">
+          <div className="flex flex-wrap gap-4">
           { projects.map(project => (
             <ProjectCard 
               title={project.frontmatter.title}
@@ -45,23 +47,8 @@ export default function HomePage() {
         }
       </section>
 
-      {/* Old Projects Section */}
-      {/* <section id="projects" className="mb-16">
-        <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
-        {
-          projectPosts.length > 0 ?
-        projectPosts.map(post => (
-            <PostLine
-              key={post.slug}
-              title={post.frontmatter.title}
-              date={post.frontmatter.date}
-              href={`/projects/${post.slug}`}
-            />
-          )) : <p className="font-monda w-full">To be done...</p>}
-      </section> */}
-
       {/* Blog Section */}
-      <section id="blog" className="mb-16">
+      <section id="blog" className="mb-16 w-full">
         <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2>
         { blogPosts.length > 0 ? 
         blogPosts.map(post => (
@@ -73,6 +60,7 @@ export default function HomePage() {
             />
           )) : <p className="font-monda w-full">To be done...</p>}
       </section>
+      </div>
     </main>
   );
 }
