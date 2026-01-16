@@ -28,8 +28,10 @@ export default function HomePage() {
 
       {/* Highlights Section (To Curate) */}
       <section id="highlights" className="mb-16 w-full">
-        <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
-
+        <div className="flex relative inline-flex items-start">
+          <span className="h-9 w-2 bg-[var(--yellow)] mr-4 bg-[var(--yellow)]" />
+          <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
+        </div>
         {/* getAlProjects() (DONE) --> create a ProjectCard for each project */}
         {
           projects.length === 0 ? 
@@ -49,7 +51,11 @@ export default function HomePage() {
 
       {/* Blog Section */}
       <section id="blog" className="mb-16 w-full">
-        <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2>
+        {/* <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2> */}
+        <div className="flex relative inline-flex items-start">
+          <span className="h-9 w-2 bg-[var(--yellow)] mr-4 bg-[var(--yellow)]" />
+          <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2>
+        </div>
         { blogPosts.length > 0 ? 
         blogPosts.map(post => (
             <PostLine
