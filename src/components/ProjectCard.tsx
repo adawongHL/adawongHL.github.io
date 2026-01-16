@@ -9,27 +9,26 @@ export type ProjectProps = {
 
 export default function ProjectCard({ title, description, image, tags }: ProjectProps) {
   return (
-    <div className="flex flex-col border border-muted rounded w-min">
+    <Link href={tags[Object.keys(tags)[0]]} className="flex flex-col border border-muted rounded w-min transform transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"> {/* Make the card clickable */}
       {image && (
-          <img
-            src={image}
-            alt={title}
-            className="mb-4 w-full h-48 object-cover rounded-t"
-          />
-        )}
+        <img
+          src={image}
+          alt={title}
+          className="mb-4 w-full h-48 object-cover rounded-t"
+        />
+      )}
       <div className="m-3">
-      <div className="text-xl font-bold mb-2 font-monda">{title}</div>
-      <p>{description}</p>
-      <div className="flex flex-row gap-2"> {/* Flex row for tags */}
-        {Object.entries(tags).map(([tagName, tagLink]) => (
-          <Link key={tagName} href={tagLink} className="relative my-6 hover:translate-y-0.5 hover:translate-x-0.5 transition-all duration-200">
-            <span className="font-monda hover:bg-secondary hover:text-background border border-muted mr-1 p-2 rounded 
-            transition-all duration-100 ">{tagName}</span>
-          </Link>
-        ))}
+        <div className="text-xl font-bold mb-2 font-monda">{title}</div>
+        <p>{description}</p>
+        <div className="flex flex-row gap-2"> {/* Flex row for tags */}
+          {Object.entries(tags).map(([tagName, tagLink]) => (
+            <span key={tagName} className="font-monda hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100">
+              {tagName}
+            </span>
+          ))}
+        </div>
       </div>
-      </div>
-    </div>
+    </Link>
   );
 }
 
