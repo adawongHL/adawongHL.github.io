@@ -18,8 +18,8 @@ export default function Header() {
           Hi, I'm Ada!
         </h1>
         <div className="flex items-end relative">
-          <p className={`text-lg text-gray-600 w-3/10 ${fadeIn ? "opacity-100" : "opacity-0"}`}
-          style={{ transition: 'opacity 1s ease-in' }}>I like to build things 🏔️ </p>
+          <p className={`text-lg text-gray-600 w-full ${fadeIn ? "opacity-100" : "opacity-0"}`}
+          style={{ transition: 'opacity 0.9s ease-in' }}>I tinker, build and write 🏔️ </p>
         </div>
       </header>
     </div>
