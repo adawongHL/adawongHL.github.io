@@ -43,6 +43,7 @@ export default function HomePage() {
               description={project.frontmatter.description}
               image={project.frontmatter.image}
               tags={project.frontmatter.tags}
+              key={project.frontmatter.title}
               />
           ))}
           </div>
