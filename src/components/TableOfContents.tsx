@@ -69,6 +69,7 @@ export default function TableOfContents({ headings }: { headings: TocItem[] }) {
           className={`
             ${tocStyles[heading.level]}
             transition-colors
+            font-monda
             ${
               activeId === heading.id
                 ? 'text-secondary font-semibold'
