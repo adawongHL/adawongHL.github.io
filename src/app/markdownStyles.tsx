@@ -51,7 +51,7 @@ export function makeHeading(toc: Array<{ id: string; text: string; level: number
     
     return (
       // 3. Pass the ...props through (important for libraries that inject classes/styles)
-      <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`} {...props}>
+      <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]} font-monda`} {...props}>
         {children}
       </Tag>
     );
