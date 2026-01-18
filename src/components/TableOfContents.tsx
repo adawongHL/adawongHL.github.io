@@ -2,6 +2,7 @@
 
 import { TocItem } from '@/app/markdownStyles';
 import { useEffect, useState } from 'react';
+import { monda } from '@/utils/fonts';
 
 export const tocStyles: Record<1 | 2 | 3, string> = {
   1: 'ml-2',
@@ -69,7 +70,7 @@ export default function TableOfContents({ headings }: { headings: TocItem[] }) {
           className={`
             ${tocStyles[heading.level]}
             transition-colors
-            font-monda
+            ${monda.className}
             ${
               activeId === heading.id
                 ? 'text-secondary font-semibold'

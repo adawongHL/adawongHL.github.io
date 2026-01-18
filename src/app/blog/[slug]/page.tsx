@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from 'react-markdown';
 import TableOfContents from '@/components/TableOfContents';
 import { headingStyles, CustomP, TocItem, makeHeading } from '@/app/markdownStyles';
+import { monda } from "@/utils/fonts";
 
 export async function generateStaticParams() {
   const blogs = getAllBlogPosts();
@@ -75,7 +76,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
       
       <div className="flex flex-col mr-10 w-[75%]"> {/* page (minus TOC) */}
-          <div className="flex font-monda prose min-w-0"> {/* header */}
+          <div className={`flex ${monda.className} prose min-w-0`}> {/* header */}
                 {/* icon */}
                 {post.frontmatter.image && (
                 <img src={post.frontmatter.image} alt={post.frontmatter.title} className="w-[100px] h-[100px] flex-shrink-0 mr-6"/>

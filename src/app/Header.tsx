@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { monda } from "@/utils/fonts";
 
 export default function Header() {
   const [fadeIn, setFadeIn] = useState(false);
@@ -11,7 +12,7 @@ export default function Header() {
 
   return (
     <div className="flex">
-      <header className={`mb-16 text-left font-monda w-full`}>
+      <header className={`mb-16 text-left ${monda.className} w-full`}>
         <h1
           className={`text-5xl font-bold mb-4 transition-opacity duration-500 ${fadeIn ? "opacity-100" : "opacity-0"}`}
           style={{ transition: 'opacity 0.3s ease-in' }}>

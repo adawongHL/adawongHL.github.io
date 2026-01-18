@@ -8,6 +8,7 @@ import TopNav from "@/components/TopNav";
 // import MosaicMap from "@/components/MosaicMap";
 import { data } from "@/components/MapData";
 import { getAllBlogPosts, getAllProjects } from "@/utils/posts";
+import { monda } from "@/utils/fonts";
 
 export default function HomePage() {
   // const projectPosts = getAllProjectPosts();
@@ -30,12 +31,12 @@ export default function HomePage() {
       <section id="highlights" className="mb-16 w-full">
         <div className="flex relative inline-flex items-start">
           <span className="h-9 w-2 bg-[var(--yellow)] mr-4 bg-secondary" />
-          <h2 className="text-3xl font-bold font-monda mb-6">Projects</h2>
+          <h2 className={`text-3xl font-bold ${monda.className} mb-6`}>Projects</h2>
         </div>
         {/* getAlProjects() (DONE) --> create a ProjectCard for each project */}
         {
           projects.length === 0 ? 
-          <p className="font-monda w-full">To be done...</p> :
+          <p className={`${monda.className} w-full`}>To be done...</p> :
           <div className="flex flex-wrap gap-4">
           { projects.map(project => (
             <ProjectCard 
@@ -55,7 +56,7 @@ export default function HomePage() {
         {/* <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2> */}
         <div className="flex relative inline-flex items-start">
           <span className="h-9 w-2 bg-[var(--yellow)] mr-4 bg-secondary" />
-          <h2 className="text-3xl font-bold font-monda mb-6">Blog</h2>
+          <h2 className={`text-3xl font-bold ${monda.className} mb-6`}>Blog</h2>
         </div>
         { blogPosts.length > 0 ? 
         blogPosts.map(post => (
@@ -65,7 +66,7 @@ export default function HomePage() {
               date={post.frontmatter.date}
               href={`/blog/${post.slug}`}
             />
-          )) : <p className="font-monda w-full">To be done...</p>}
+          )) : <p className={`${monda.className} w-full`}>To be done...</p>}
       </section>
       </div>
     </main>
