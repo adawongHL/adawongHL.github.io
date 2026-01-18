@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { monda } from "@/utils/fonts";
 
 export type ProjectProps = {
   title: string;
@@ -22,13 +23,13 @@ export default function ProjectCard({ title, description, image, tags }: Project
       )}
       <div className="m-3">
         <Link href={tags[Object.keys(tags)[0]]}>
-          <div className="text-xl font-bold mb-2 font-monda">{title}</div>
+          <div className={`text-xl font-bold mb-2 ${monda.className}`}>{title}</div>
           <p>{description}</p>
         </Link>
         <div className="flex flex-row gap-2"> 
           {Object.entries(tags).map(([tagName, tagLink]) => (
-            <Link key={tagName} href={tagLink} className="my-4">
-              <span key={tagName} className="font-monda hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100">
+            <Link key={tagName} href={tagLink} className="mt-6 mb-4">
+              <span key={tagName} className={`${monda.className} hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100`}>
                 {tagName}
               </span>
             </Link>

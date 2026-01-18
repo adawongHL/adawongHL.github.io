@@ -2,6 +2,7 @@
 // appearance of each post on the landing page
 // TODO: Hover over PostCard to see % bar for tech stack
 import Link from "next/link";
+import { monda } from "@/utils/fonts";
 
 type PostProps = {
   title: string;
@@ -38,7 +39,7 @@ export default function PostCard({ title, description, image, href }: PostProps)
             className="mb-4 w-full h-48 object-cover rounded"
           />
         )}
-        <h3 className="text-xl font-bold mb-2 font-monda">{title}</h3>
+        <h3 className={`text-xl font-bold mb-2 ${monda.className}`}>{title}</h3>
         <p>{description}</p>
       </div>
     </Link>
