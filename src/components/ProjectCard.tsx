@@ -9,26 +9,33 @@ export type ProjectProps = {
 
 export default function ProjectCard({ title, description, image, tags }: ProjectProps) {
   return (
-    <Link href={tags[Object.keys(tags)[0]]} className="flex flex-col border border-muted rounded w-min transform transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"> {/* Make the card clickable */}
+    <div className="flex flex-col border border-muted rounded w-min transform transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"> {/* Make the card clickable */}
+      
       {image && (
-        <img
-          src={image}
-          alt={title}
-          className="mb-4 w-full h-48 object-cover rounded-t"
-        />
+        <Link href={tags[Object.keys(tags)[0]]}>
+          <img
+            src={image}
+            alt={title}
+            className="mb-4 w-full h-48 object-cover rounded-t"
+          />
+        </Link>
       )}
       <div className="m-3">
-        <div className="text-xl font-bold mb-2 font-monda">{title}</div>
-        <p>{description}</p>
-        <div className="flex flex-row gap-2"> {/* Flex row for tags */}
+        <Link href={tags[Object.keys(tags)[0]]}>
+          <div className="text-xl font-bold mb-2 font-monda">{title}</div>
+          <p>{description}</p>
+        </Link>
+        <div className="flex flex-row gap-2"> 
           {Object.entries(tags).map(([tagName, tagLink]) => (
-            <span key={tagName} className="font-monda hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100">
-              {tagName}
-            </span>
+            <Link key={tagName} href={tagLink} className="my-4">
+              <span key={tagName} className="font-monda hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100">
+                {tagName}
+              </span>
+            </Link>
           ))}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
