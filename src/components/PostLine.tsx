@@ -2,6 +2,7 @@
 // appearance of each post on the landing page
 // TODO: Hover over PostCard to see % bar for tech stack
 import Link from "next/link";
+import { monda } from "@/utils/fonts";
 
 type PostProps = {
   title: string;
@@ -14,7 +15,7 @@ export default function PostLine({ title, href, date }: PostProps) {
 
   return (
     <Link href={href}>
-      <div className="group font-monda flex flex-row justify-between items-end cursor-pointer">
+      <div className={`group ${monda.className} flex flex-row justify-between items-end cursor-pointer`}>
         
         {/* Title */}
         <div className="relative inline-block">
@@ -24,7 +25,7 @@ export default function PostLine({ title, href, date }: PostProps) {
 
         {/* Date */}
         <div className="relative inline-block font-mono">
-          <p className="group-hover:font-bold">
+          <p className="transition duration-250 group-hover:opacity-100 opacity-80 font-mono">
             {year}.{month}.{day}
           </p>
           <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
