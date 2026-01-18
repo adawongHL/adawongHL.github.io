@@ -15,7 +15,7 @@ export default function PostLine({ title, href, date }: PostProps) {
 
   return (
     <Link href={href}>
-      <div className={`group ${monda.className} flex flex-row justify-between items-end cursor-pointer`}>
+      <div className={`group ${monda.className} flex flex-row justify-between items-center cursor-pointer`}>
         
         {/* Title */}
         <div className="relative inline-block">
