@@ -2,7 +2,7 @@ import { monda } from '@/utils/fonts';
 
 export default function TopNav() {
   return (
-    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 bg-background z-1`}>
+    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 bg-background z-10`}>
       {[
         { label: "Home", href: "/" },
         { label: "Email", href: "mailto:business.adawong@gmail.com" },
@@ -15,15 +15,16 @@ export default function TopNav() {
         >
           <span className="relative inline-block">
             {/* hover underline */}
+            {/* translate-x runs everytime width changes - shifts to the left 50% (1/2) of this element's OWN width */}
             <span
               className="
                 pointer-events-none
-                absolute left-0 bottom-0
+                absolute left-1/2 bottom-0
                 h-[2px] w-0
                 bg-primary
                 transition-all duration-150 ease-out
                 group-hover:w-full
-                left-1/2 -translate-x-1/2
+                -translate-x-1/2  
               "
             />
             <span className="transition-colors duration-150 group-hover:text-primary font-bold">
