@@ -1,4 +1,3 @@
-"use client";
 import { monda } from '@/utils/fonts';
 
 export default function TopNav() {
