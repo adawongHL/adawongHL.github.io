@@ -28,12 +28,15 @@
 } */ 
 
 :root {
+  --font-monda: "Monda", system-ui, sans-serif;
   --background: #F3FFFF;
-  --foreground: #152845;
-  /* --primary: #e3f5ed;
-  --secondary: #42feae;
-  --muted: #94a3b8;
-  --font-monda: "Monda", system-ui, sans-serif; */
+  --foreground: #152845;  /* text */
+  --primary: #EC4443;
+  --secondary: #245FAE;
+  --muted: #C8E6F9;
+  --green: #01BD76;
+  --error: var(--red-500);
+  --yellow: #FFF153;
 }
 
 @theme inline {
