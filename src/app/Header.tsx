@@ -6,7 +6,7 @@ export default function Header() {
       <h1 className="text-5xl font-bold mb-4">
         Hi, I'm Ada!
       </h1>
-      <p className="text-lg text-gray-600">
+      <p className="text-lg">
         I tinker, build and write 🏔️
       </p>
     </header>

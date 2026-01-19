@@ -22,12 +22,13 @@ export default function TopNav() {
                 absolute left-1/2 bottom-0
                 h-[2px] w-0
                 bg-primary
+                dark:bg-[var(--yellow)]
                 transition-all duration-150 ease-out
                 group-hover:w-full
                 -translate-x-1/2  
               "
             />
-            <span className="transition-colors duration-150 group-hover:text-primary font-bold">
+            <span className="transition-colors duration-150 group-hover:text-primary dark:group-hover:text-[var(--yellow)] font-bold">
               {label}
             </span>
           </span>

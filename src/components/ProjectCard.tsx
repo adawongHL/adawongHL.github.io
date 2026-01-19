@@ -29,7 +29,7 @@ export default function ProjectCard({ title, description, image, tags }: Project
         <div className="flex flex-row gap-2"> 
           {Object.entries(tags).map(([tagName, tagLink]) => (
             <Link key={tagName} href={tagLink} className="mt-6 mb-4">
-              <span key={tagName} className={`${monda.className} hover:bg-secondary hover:text-background border border-muted mr-1 my-4 p-2 rounded transition-all duration-100`}>
+              <span key={tagName} className={`${monda.className} hover:bg-secondary hover:text-background dark:hover:bg-[var(--yellow)] border border-muted mr-1 my-4 p-2 rounded transition-all duration-100`}>
                 {tagName}
               </span>
             </Link>

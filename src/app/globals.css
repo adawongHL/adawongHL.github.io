@@ -54,11 +54,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --font-monda: "Monda", system-ui, sans-serif;
-    --background: #F3FFFF;
-    --foreground: #152845;  /* text */
+    --background: #111316;
+    --foreground: #F3FFFF;  /* text */
     --primary: #EC4443;
     --secondary: #245FAE;
-    --muted: #C8E6F9;
+    --muted: #c8e6f963;
     --green: #01BD76;
     --error: var(--red-500);
     --yellow: #FFF153;
