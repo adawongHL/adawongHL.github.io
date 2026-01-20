@@ -49,16 +49,16 @@ export default function TableOfContents({ headings }: { headings: TocItem[] }) {
       const scrolledToBottom =
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 10;
-  
+
       if (scrolledToBottom && headings.length > 0) {
         setActiveId(headings[headings.length - 1].id);
       }
     }
-  
+
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, [headings]);
-  
+
 
   return (
     <nav className="flex flex-col space-y-1">
@@ -68,13 +68,13 @@ export default function TableOfContents({ headings }: { headings: TocItem[] }) {
           href={`#${heading.id}`}
           onClick={() => setActiveId(heading.id)}
           className={`
+            my-1
             ${tocStyles[heading.level]}
             transition-colors
             ${monda.className}
-            ${
-              activeId === heading.id
-                ? 'text-secondary font-semibold'
-                : 'text-muted-foreground hover:text-foreground'
+            ${activeId === heading.id
+              ? 'text-secondary dark:text-[var(--yellow)] font-semibold'
+              : 'text-[var(--grey)] dark:text-muted hover:text-foreground'
             }
           `}
         >
