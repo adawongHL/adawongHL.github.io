@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <hr className="border-muted mt-6"></hr>
 
         {/* body */}
-        <div className="prose">
+        <div className="prose mr-12">
           <ReactMarkdown components={{
             p: CustomP,
             h1: makeHeading(toc, 1),
