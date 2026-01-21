@@ -94,10 +94,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         </div>
 
-        <hr className="border-muted mt-6"></hr>
+        <hr className="border-muted mt-6 mr-8"></hr>
 
         {/* body */}
-        <div className="prose mr-12">
+        <div className="prose mr-18">
           <ReactMarkdown components={{
             p: CustomP,
             h1: makeHeading(toc, 1),
