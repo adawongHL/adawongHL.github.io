@@ -19,8 +19,8 @@ export default function PostLine({ title, href, date }: PostProps) {
 
         {/* Title */}
         <div className="relative inline-block">
-          <h3 className="mb-2 transition-all duration-120 text-foreground group-hover:text-primary mr-8">{title}</h3>
-          {/* <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />  */}
+          <h3 className="mb-2 transition-all duration-120 text-foreground/90 group-hover:text-foreground mr-8">{title}</h3>
+          {/* <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" /> */}
         </div>
 
         {/* Date */}
@@ -28,7 +28,7 @@ export default function PostLine({ title, href, date }: PostProps) {
           <p className="transition duration-150 group-hover:opacity-100 opacity-80 font-mono">
             {year}.{month}.{day}
           </p>
-          <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
+          <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary dark:bg-[var(--yellow)] transition-all duration-200 group-hover:w-full" />
         </div>
 
       </div>
