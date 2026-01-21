@@ -1,7 +1,7 @@
 ---
 title: "Bugs and Fixes"
 description: "Lessons from troubleshooting as a webdev admin"
-date: "2025-01-20"
+date: "2026-01-20"
 image: "/images/line-abstract.jpg"
 highlight: false
 ---
