@@ -1,11 +1,10 @@
 ---
 title: "What I learned running basic security checks on a website"
-description: ""
+description: "XSS, Session Hijacking, Web Shell"
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
 highlight: false
 --- 
-
 
 # Intro
 
