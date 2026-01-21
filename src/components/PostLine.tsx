@@ -19,7 +19,7 @@ export default function PostLine({ title, href, date }: PostProps) {
 
         {/* Title */}
         <div className="relative inline-block">
-          <h3 className="mb-2 transition-all duration-150 text-foreground/85 group-hover:text-foreground mr-8">{title}</h3>
+          <h3 className="mb-2 transition-all duration-120 text-foreground group-hover:text-primary mr-8">{title}</h3>
           {/* <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />  */}
         </div>
 
