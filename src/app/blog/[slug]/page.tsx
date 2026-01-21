@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
 
       {/* table of contents */}
-      <aside className="w-1/4 sticky top-52 self-start">
+      <aside className="hidden lg:block w-1/4 sticky top-52 self-start">
         <TableOfContents headings={toc} />
       </aside>
 
