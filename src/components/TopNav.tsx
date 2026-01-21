@@ -7,6 +7,7 @@ export default function TopNav() {
         { label: "Home", href: "/" },
         { label: "Email", href: "mailto:business.adawong@gmail.com" },
         { label: "Github", href: "https://github.com/adawongHL" },
+        { label: "Bio", href: "/bio" }
       ].map(({ label, href }) => (
         <a
           key={label}
