@@ -11,21 +11,21 @@ type PostProps = {
 };
 
 export default function PostLine({ title, href, date }: PostProps) {
-    const [year, month, day] = date.split("-");
+  const [year, month, day] = date.split("-");
 
   return (
     <Link href={href}>
-      <div className={`group ${monda.className} flex flex-row justify-between items-center cursor-pointer`}>
-        
+      <div className={`group ${monda.className} flex flex-row justify-between items-end cursor-pointer`}>
+
         {/* Title */}
         <div className="relative inline-block">
-          <h3 className="text-xl mb-2 group-hover:font-bold">{title}</h3>
-          <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
+          <h3 className="mb-2 transition-all duration-150 text-foreground/85 group-hover:text-foreground mr-8">{title}</h3>
+          {/* <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />  */}
         </div>
 
         {/* Date */}
         <div className="relative inline-block font-mono">
-          <p className="transition duration-250 group-hover:opacity-100 opacity-80 font-mono">
+          <p className="transition duration-150 group-hover:opacity-100 opacity-80 font-mono">
             {year}.{month}.{day}
           </p>
           <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" />
