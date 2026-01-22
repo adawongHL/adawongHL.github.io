@@ -24,8 +24,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <Header />
 
-      {/* <div className="flex flex-col md:flex-row"> */}
-      <div className="grid md:grid-cols-2 grid-cols-1">
+      <div className="flex flex-col">
+        {/* <div className="grid md:grid-cols-2 grid-cols-1"> */}
 
         {/* Highlights Section (To Curate) */}
         <section id="highlights" className="mb-16 w-full">
