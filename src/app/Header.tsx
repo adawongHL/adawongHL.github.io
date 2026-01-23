@@ -9,6 +9,13 @@ export default function Header() {
       <p className="text-lg">
         I tinker, build and write 🏔️
       </p>
+      <div className="flex items-center">
+        <div className="w-3 h-3 shrink-0 rounded-full bg-blue-500 animate-blink mr-2"></div>
+        <p className="my-2">
+          Currently: Building a TUI game in Python that teaches bash && writing blog posts
+        </p>
+      </div>
+
     </header>
   );
 }
