@@ -1,6 +1,6 @@
 ---
-title: "Bugs and Fixes"
-description: "Lessons from troubleshooting as a webdev admin"
+title: "Lessons from troubleshooting as a webdev admin"
+description: "How to fix bugs"
 date: "2026-01-20"
 image: "/images/line-abstract.jpg"
 highlight: false
@@ -8,7 +8,7 @@ highlight: false
 
 # Intro 
 
-In college, I worked as webdev admin for 2 years. We run a LAMP-stack website that serves as the backbone of a freshman course. Without it, students can't submit assignments, professors can’t upload grades, and teaching assistants (TAs) can’t file work reports. As webdev admins, there’s a funny thrill in bug-fixing, especially that moment when you push your commits to the cloud and pull it live. 
+In college, I worked as webdev admin for 2 years. We run a LAMP-stack website that serves as the backbone of a freshman course. Without it, students can't submit assignments, professors can’t upload grades, and teaching assistants (TAs) can’t file work reports. As webdev admins, there’s a thrill in bug-fixing, especially that moment when you push your commits to the cloud and pull it live. 
 
 Throughout this time, I learnt to work with SQL databases, write SQL scripts saving hours of work, and wrangle with a PHP codebase which I had no experience with before. But most crucially, I learnt how to think through a problem when they arise. Here, I want to extract the lessons I’ve learnt, serving as a useful reminder for future me and anyone who might find it useful. 
 
