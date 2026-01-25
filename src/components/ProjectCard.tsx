@@ -10,7 +10,7 @@ export type ProjectProps = {
 
 export default function ProjectCard({ title, description, image, tags }: ProjectProps) {
   return (
-    <div className="flex flex-col border border-muted rounded transform transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"> {/* Make the card clickable */}
+    <div className="flex flex-col border border-muted w-min-[15rem] ounded transform transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1"> {/* Make the card clickable */}
 
       {image && (
         <Link href={tags[Object.keys(tags)[0]]}>
