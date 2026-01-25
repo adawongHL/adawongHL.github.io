@@ -1,12 +1,10 @@
 ---
 title: "Portfolio Website"
-description: "A personal portfolio website built with Next.js and Tailwind CSS"
+description: "Built with Next.js and Tailwind CSS"
 date: "2025-12-12"
 image: "/images/line-abstract.jpg"
 tags: {
-    "Blog": "blog/01-portfolio",
     "</>": "https://github.com/adawongHL/adawongHL.github.io",
-    "Demo": "https://adawonghl.github.io/",
 }
 ---
 
