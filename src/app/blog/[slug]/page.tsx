@@ -76,6 +76,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             h2: makeHeading(toc, 2),
             h3: makeHeading(toc, 3),
             code: CodeBlock,
+            ol: ({ children }) => <ol className="list-decimal text-foreground ml-12 my-4 text-xl">{children}</ol>,
+            li: ({ children }) => <li className="list-disc text-foreground my-4 ml-12 text-xl">{children}</li>,
           }}>
             {post.content}
           </ReactMarkdown></div>
