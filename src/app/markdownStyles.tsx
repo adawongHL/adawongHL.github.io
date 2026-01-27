@@ -12,9 +12,7 @@ import type { ComponentProps } from "react";
 type ParagraphProps = ComponentProps<"p"> & {
   node?: unknown; // must be optional
 };
-// export const CustomP({ node, ...props }: ParagraphProps) {
-//   return <p className="my-8 leading-relaxed text-foreground" {...props} />;
-// }
+
 export const CustomP = ({ node, ...props }: ParagraphProps) => (
   <p className="my-9 leading-loose text-foreground text-lg font-roboto dark:text-foreground/85" {...props} />
 )
@@ -27,32 +25,23 @@ export type TocItem = {
 }
 
 export function makeHeading(toc: Array<{ id: string; text: string; level: number }>, level: 1 | 2 | 3) {
-  // 1. Accept all standard HTML attributes for a Heading Element
   return function HeadingComponent({
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) {
 
-    // 2. Edge case - children might be null/undefined or not a string
+    // edge case - children might be null/undefined or not a string
     const text = children ? String(children) : '';
 
-    const baseId = text
+    // generate id the same way page.tsx (blog) generates id
+    const id = text
       .toLowerCase()
-      .replace(/\s+/g, '-') // replace any whitespaces with -
-      .replace(/[^\w-]/g, ''); // remove punctuations
-
-    const id = baseId + `-${toc.length}`;
-
-    // push to TOC if there is actual text
-    if (text) {
-      const TocItem = { id, text, level };
-      toc.push(TocItem);
-    }
+      .replace(/\s+/g, '-')
+      .replace(/[^\w-]/g, '');
 
     const Tag = `h${level}` as const;
 
     return (
-      // 3. Pass the ...props through (important for libraries that inject classes/styles)
       <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]} font-monda`} {...props}>
         {children}
       </Tag>

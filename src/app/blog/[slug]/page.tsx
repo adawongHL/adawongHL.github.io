@@ -17,57 +17,29 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const { slug } = await params;
   const posts = getAllBlogPosts();
   const post = posts.find((p) => p.slug === slug);
-  // console.log("Content:", post.content, "****END");
 
-  const toc: TocItem[] = [] // contains all headings; pass to TableOfContents component as prop later
-  // factory function to create a new heading React component (tagged with id; format: function)
-  // headingLevel is passed by me
-  // children is passed from react markdown; contains the heading text; type ReactNode
-  // function makeHeading(level: 1|2|3) {
-  //   return function HeadingComponent( { children }: { children: React.ReactNode } ) {
-  //     const text = String(children);
-  //     const baseId = text.toLowerCase().replace('/\s+/g', '-').replace('/^[\w-]/g', '');
-  //     const id = baseId + `-${toc.length}`;
-  //     const TocItem = { id: id, text: text, level: level };
-  //     toc.push(TocItem); 
+  // ignore code blocks so that comment lines (#) aren't misinterpretted as headings
+  const contentWithoutCodeBlocks = post.content.replace(/```[\s\S]*?```/g, "");
 
-  //     const Tag = `h${level}` as const // h1 or h2 or h3 (dynamic HTML tag name)
-  //     return <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`}>{children}</Tag>
-  //   }
-  // }
-  // function makeHeading(level: 1 | 2 | 3) {
-  //   // 1. Accept all standard HTML attributes for a Heading Element
-  //   return function HeadingComponent({ 
-  //     children, 
-  //     ...props 
-  //   }: React.HTMLAttributes<HTMLHeadingElement>) {
+  // find all our headings first to ensure all  are present before passing it to TableOfContents downstairs
+  // ^ pattern: "data lifting" in react
+  const toc: TocItem[] = [];
+  const headingRegex = /^(#{1,3})\s+(.*)$/gm;
 
-  //     // 2. Edge case - children might be null/undefined or not a string
-  //     const text = children ? String(children) : '';
+  let match;
+  while ((match = headingRegex.exec(contentWithoutCodeBlocks)) !== null) {
+    const level = match[1].length as 1 | 2 | 3;
+    const text = match[2].trim();
 
-  //     const baseId = text
-  //       .toLowerCase()
-  //       .replace(/\s+/g, '-') // replace any whitespaces with -
-  //       .replace(/[^\w-]/g, ''); // remove punctuations
+    // create id for this heading (so that clicking on it in TOC will bring us there)
+    const id = text
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w-]/g, '');
 
-  //     const id = baseId + `-${toc.length}`;
+    toc.push({ id, text, level });
+  }
 
-  //     // push to TOC if there is actual text
-  //     if (text) {
-  //       const TocItem = { id, text, level };
-  //       toc.push(TocItem);
-  //     }
-
-  //     const Tag = `h${level}` as const;
-
-  //     return (
-  //       // 3. Pass the ...props through (important for libraries that inject classes/styles)
-  //       <Tag id={id} className={`scroll-mt-24 ${headingStyles[level]}`} {...props}>
-  //         {children}
-  //       </Tag>
-  //     );
-  //   };
-  // }
 
   if (!post) return notFound();
 
@@ -110,7 +82,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
 
       {/* table of contents */}
-      <aside className="hidden lg:block w-1/4 sticky top-52 self-start">
+      <aside className="hidden lg:block w-1/4 sticky top-52 self-start max-h-48 bottom-52">
         <TableOfContents headings={toc} />
       </aside>
 
