@@ -2,9 +2,9 @@ import { roboto } from "@/utils/fonts";
 
 // styles for h1, h2, h3, p
 export const headingStyles: Record<1 | 2 | 3, string> = {
-  1: "text-5xl font-bold text-foreground mt-24 mb-10 mb-5",
-  2: "text-3xl font-bold text-foreground mt-14 mb-4",
-  3: "text-2xl font-semibold text-foreground mt-6 mb-3",
+  1: "lg:text-5xl text-2xl font-bold text-foreground lg:mt-24 mt-12 mb-10 mb-5",
+  2: "lg:text-3xl text-xl font-bold text-foreground lg:mt-14 mt-8 mb-4",
+  3: "lg:text-2xl text-lg font-semibold text-foreground mt-6 mb-3",
 }
 
 import type { ComponentProps } from "react";
@@ -14,7 +14,7 @@ type ParagraphProps = ComponentProps<"p"> & {
 };
 
 export const CustomP = ({ node, ...props }: ParagraphProps) => (
-  <p className="my-7 leading-loose text-foreground text-xl dark:text-foreground" {...props} />
+  <p className="my-7 leading-loose text-foreground lg:text-xl dark:text-foreground text-md" {...props} />
 )
 
 // table of contents - heading item

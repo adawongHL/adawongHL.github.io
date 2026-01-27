@@ -44,10 +44,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   return (
-    <div className="flex justify-center items-start mx-auto max-w-[80vw] mt-15">
+    <div className="flex justify-center items-start mx-auto mt-15 w-full max-w-[98vw] lg:max-w-[80vw] px-4 lg:px-0">
 
 
-      <div className="flex flex-col mr-10 w-[75%]"> {/* page (minus TOC) */}
+      <div className="flex flex-col mr-10 w-full lg:w-[75%] lg:mr-10"> {/* page (minus TOC) */}
         <div className={`flex ${monda.className} prose min-w-0`}> {/* header */}
           {/* icon */}
           {post.frontmatter.image && (
@@ -76,8 +76,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             h2: makeHeading(toc, 2),
             h3: makeHeading(toc, 3),
             code: CodeBlock,
-            ol: ({ children }) => <ol className="list-decimal text-foreground ml-12 my-4 text-xl">{children}</ol>,
-            li: ({ children }) => <li className="list-disc text-foreground my-4 ml-12 text-xl">{children}</li>,
+            ol: ({ children }) => <ol className="list-decimal text-foreground ml-12 my-4 lg:text-xl text-md">{children}</ol>,
+            li: ({ children }) => <li className="list-disc text-foreground my-4 ml-12 lg:text-xl text-md">{children}</li>,
           }}>
             {post.content}
           </ReactMarkdown></div>
