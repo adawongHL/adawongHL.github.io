@@ -4,9 +4,7 @@ description: "A Slack bot that streamlines shift replacements"
 date: "2025-12-12"
 image: "/images/line-abstract.jpg"
 tags: {
-    "Blog": "blog/02-slack-bot",
-    "</>": "https://github.com/adawongHL/adawongHL.github.io",
-    "Demo": "https://adawonghl.github.io/",   
+    "Blog": "blog/02-slack-bot",   
 }
 ---
 
