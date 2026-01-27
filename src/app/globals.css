@@ -104,3 +104,11 @@
 .animate-blink {
   animation: blink 1.8s infinite;
 }
+
+/* to prevent code blocks from not wrapping */
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+  max-width: 100%;
+}
