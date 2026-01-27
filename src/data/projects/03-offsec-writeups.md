@@ -1,6 +1,6 @@
 ---
 title: "Offensive Security CTFs"
-description: "My writeups (Fall 2025)"
+description: "My writeups"
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
 tags: {
