@@ -18,6 +18,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const posts = getAllBlogPosts();
   const post = posts.find((p) => p.slug === slug);
 
+  if (!post) return notFound();
+
   // ignore code blocks so that comment lines (#) aren't misinterpretted as headings
   const contentWithoutCodeBlocks = post.content.replace(/```[\s\S]*?```/g, "");
 
@@ -39,9 +41,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
     toc.push({ id, text, level });
   }
-
-
-  if (!post) return notFound();
 
   return (
     <div className="flex justify-center items-start mx-auto max-w-[80vw] mt-15">
