@@ -81,10 +81,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
 
       {/* table of contents */}
-      <aside className="hidden lg:block w-1/4 sticky top-52 self-start max-h-48 bottom-52">
+      <aside className="hidden lg:block w-1/4 sticky top-52 self-start max-h-[calc(100vh-300px)] overflow-y-auto pr-4 custom-scrollbar">
         <TableOfContents headings={toc} />
       </aside>
-
 
     </div>
   );
