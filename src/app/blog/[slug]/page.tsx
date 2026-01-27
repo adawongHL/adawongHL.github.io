@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from 'react-markdown';
 import TableOfContents from '@/components/TableOfContents';
 import { headingStyles, CustomP, TocItem, makeHeading } from '@/app/markdownStyles';
+import CodeBlock from '@/components/CodeBlock';
 import { monda } from "@/utils/fonts";
 
 export async function generateStaticParams() {
@@ -74,6 +75,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             h1: makeHeading(toc, 1),
             h2: makeHeading(toc, 2),
             h3: makeHeading(toc, 3),
+            code: CodeBlock,
           }}>
             {post.content}
           </ReactMarkdown></div>
