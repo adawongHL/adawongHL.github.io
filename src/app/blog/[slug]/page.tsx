@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import TableOfContents from '@/components/TableOfContents';
 import { headingStyles, CustomP, TocItem, makeHeading } from '@/app/markdownStyles';
 import CodeBlock from '@/components/CodeBlock';
+import ScrollBar from "@/components/ScrollBar";
 import { monda } from "@/utils/fonts";
 
 export async function generateStaticParams() {
@@ -45,7 +46,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <div className="flex justify-center items-start mx-auto mt-15 w-full max-w-[98vw] lg:max-w-[80vw] px-4 lg:px-0">
-
+      <ScrollBar />
 
       <div className="flex flex-col mr-10 w-full lg:w-[75%] lg:mr-10"> {/* page (minus TOC) */}
         <div className={`flex ${monda.className} prose min-w-0`}> {/* header */}
