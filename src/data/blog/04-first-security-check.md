@@ -1,5 +1,5 @@
 ---
-title: "What I learned running basic security checks on a website"
+title: "What I learned running security checks on a website"
 description: "XSS, Session Hijacking, Web Shell"
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
@@ -8,7 +8,7 @@ highlight: false
 
 # Intro
 
-This post documents a few vulnerabilities I identified while running basic security tests on a local copy of a web application I help maintain. Everything was done on non-production systems, and no real user data was touched.
+This post documents a few vulnerabilities I identified while running some security tests on a local copy of a web application I helped maintain. Everything was done on non-production systems, and no real user data was touched.
 
 My goal wasn’t to hack the website, but to understand attack surfaces and see how small oversights might balloon into security risks. I share certain details for educational purposes and redact any sensitive info. 
 
