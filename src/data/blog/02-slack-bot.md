@@ -4,6 +4,7 @@ description: "Workflow integration between PHP website and Slack"
 date: "2026-01-27"
 image: "/images/line-abstract.jpg"
 highlight: false
+number: 4
 ---
 
 # Intro

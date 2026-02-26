@@ -4,6 +4,7 @@ description: "XSS, Session Hijacking, Web Shell"
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
 highlight: false
+number: 2
 --- 
 
 # Intro

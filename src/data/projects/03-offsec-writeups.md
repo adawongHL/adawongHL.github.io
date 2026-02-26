@@ -1,6 +1,6 @@
 ---
 title: "Offensive Security CTFs"
-description: "My writeups"
+description: "Reverse engineering, pwn, web, and more "
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
 tags: {
