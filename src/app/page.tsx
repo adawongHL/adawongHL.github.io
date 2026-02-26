@@ -58,15 +58,22 @@ export default function HomePage() {
             <span className="h-9 w-2 mr-4 bg-secondary" />
             <h2 className={`text-3xl font-bold ${monda.className} mb-6`}>Blog</h2>
           </div>
-          {blogPosts.length > 0 ?
-            blogPosts.map(post => (
-              <PostLine
-                key={post.slug}
-                title={post.frontmatter.title}
-                date={post.frontmatter.date}
-                href={`/blog/${post.slug}`}
-              />
-            )) : <p className={`${monda.className} w-full`}>To be done...</p>}
+          {blogPosts.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {blogPosts.map(post => (
+                <PostLine
+                  key={post.slug}
+                  title={post.frontmatter.title}
+                  date={post.frontmatter.date}
+                  href={`/blog/${post.slug}`}
+                  number={post.frontmatter.number}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className={`${monda.className} w-full`}>To be done...</p>
+          )}
+            
         </section>
       </div>
     </main>

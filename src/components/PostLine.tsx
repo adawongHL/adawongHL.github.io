@@ -1,6 +1,3 @@
-// src/components/PostCard.tsx
-// appearance of each post on the landing page
-// TODO: Hover over PostCard to see % bar for tech stack
 import Link from "next/link";
 import { monda } from "@/utils/fonts";
 
@@ -8,27 +5,31 @@ type PostProps = {
   title: string;
   href: string;
   date: string;
+  number: number; // post number
 };
 
-export default function PostLine({ title, href, date }: PostProps) {
+export default function PostCard({ title, href, date, number }: PostProps) {
   const [year, month, day] = date.split("-");
 
   return (
-    <Link href={href}>
-      <div className={`group ${monda.className} flex flex-row justify-between items-end cursor-pointer`}>
+    <Link href={href} className="block h-full w-full">
+      <div className="relative rounded-lg p-3 w-full aspect-square cursor-pointer group">
 
-        {/* Title */}
-        <div className="relative inline-block">
-          <h3 className="mb-2 transition-all duration-120 text-foreground/90 group-hover:text-foreground mr-8">{title}</h3>
-          {/* <span className="absolute left-0 bottom-1 h-[2px] w-0 bg-primary transition-all duration-200 group-hover:w-full" /> */}
-        </div>
+        {/* Border */}
+        <span className="absolute inset-0 rounded-lg border border-foreground/50 transition-all duration-200 group-hover:border-3 group-hover:border-[var(--yellow)]" />
 
-        {/* Date */}
-        <div className="relative inline-block font-mono">
-          <p className="transition duration-150 group-hover:opacity-100 opacity-80 font-mono">
-            {year}.{month}.{day}
-          </p>
-          <span className="absolute left-0 bottom-0.2 h-[2px] w-0 bg-primary dark:bg-[var(--yellow)] transition-all duration-200 group-hover:w-full" />
+        {/* Card content */}
+        <div className={`relative h-full w-full rounded bg-background p-4 flex flex-col justify-between ${monda.className}`}>
+          {/* Title */}
+          <h3 className="text-lg font-semibold leading-snug line-clamp-3">
+            {title}
+          </h3>
+
+          {/* Bottom row */}
+          <div className="flex flex-row justify-between items-end text-sm font-mono opacity-80">
+            <span>{year}.{month}.{day}</span>
+            <span className="text-foreground/70">#{number}</span>
+          </div>
         </div>
 
       </div>
