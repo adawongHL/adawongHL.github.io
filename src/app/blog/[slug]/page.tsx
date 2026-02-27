@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   return (
-    <div className="flex justify-center items-start mx-auto mt-15 w-full max-w-[98vw] lg:max-w-[80vw] px-4 lg:px-0">
+    <div className="flex justify-center items-start mx-auto mt-15 w-full max-w-[98vw] lg:max-w-[80vw] px-4 lg:px-0 text-foreground">
       <ScrollBar />
 
       <div className="flex flex-col mr-10 w-full lg:w-[75%] lg:mr-10"> {/* page (minus TOC) */}

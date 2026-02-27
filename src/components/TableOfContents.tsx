@@ -73,8 +73,8 @@ export default function TableOfContents({ headings }: { headings: TocItem[] }) {
             transition-colors
             ${monda.className}
             ${activeId === heading.id
-              ? 'text-secondary dark:text-[var(--yellow)] font-semibold'
-              : 'text-[var(--grey)] dark:text-muted hover:text-foreground'
+              ? 'text-[var(--yellow)] font-semibold'
+              : 'text-muted hover:text-foreground'
             }
           `}
         >

@@ -48,7 +48,7 @@ export default function ProjectCard({ title, description, image, tags }: Project
             {Object.entries(tags).map(([tagName, tagLink]) => (
               <Link key={tagName} href={tagLink}>
                 <span
-                  className={`${monda.className} hover:bg-secondary hover:text-background dark:hover:bg-[var(--yellow)] border border-muted p-2 rounded transition-all duration-100`}
+                  className={`${monda.className} hover:text-background hover:bg-[var(--yellow)] border border-muted p-2 rounded transition-all duration-100`}
                 >
                   {tagName}
                 </span>

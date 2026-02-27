@@ -19,7 +19,7 @@ export default function HomePage() {
   const highlightBlogs = blogPosts.filter(post => { return post.frontmatter.highlight === true })
 
   return (
-    <main className="">
+    <main className="text-foreground">
 
       {/* Hero Section */}
       <Header />
@@ -30,7 +30,7 @@ export default function HomePage() {
         {/* Highlights Section (To Curate) */}
         <section id="highlights" className="mb-16 w-full">
           <div className="flex relative inline-flex items-start">
-            <span className="h-9 w-2 mr-4 bg-secondary dark:bg-[var(--yellow)]" />
+            <span className="h-9 w-2 mr-4 bg-[var(--yellow)]" />
             <h2 className={`text-3xl font-bold ${monda.className} mb-6`}>Projects</h2>
           </div>
           {/* getAlProjects() (DONE) --> create a ProjectCard for each project */}

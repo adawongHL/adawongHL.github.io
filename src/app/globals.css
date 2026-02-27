@@ -2,15 +2,29 @@
 
 :root {
   --font-monda: "Monda", system-ui, sans-serif;
-  --background: #F3FFFF;
-  --foreground: #152845;
+  --background: #111316;
+  --foreground: #F3FFFF;
   /* text */
   --primary: #EC4443;
+  --secondary: #245FAE;
+  --muted: #c8e6f963;
+  --green: #01BD76;
+  --error: var(--red-500);
+  --yellow: #FFF153;
+  --grey: #47e81bde;
+
+
+  /* LIGHT THEME */
+  /* --font-monda: "Monda", system-ui, sans-serif;
+  --background: #F3FFFF;
+  --foreground: #152845; */
+  /* text */
+  /* --primary: #EC4443;
   --secondary: #245FAE;
   --muted: #C8E6F9;
   --green: #01BD76;
   --error: var(--red-500);
-  --yellow: #FFF153;
+  --yellow: #FFF153; */
 }
 
 @theme inline {
@@ -24,28 +38,28 @@
   --color-muted: var(--muted);
 }
 
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --font-monda: "Monda", system-ui, sans-serif;
     --background: #111316;
     --foreground: #F3FFFF;
     /* text */
-    --primary: #EC4443;
+    /* --primary: #EC4443;
     --secondary: #245FAE;
     --muted: #c8e6f963;
     --green: #01BD76;
     --error: var(--red-500);
     --yellow: #FFF153;
     --grey: #47e81bde;
-  }
+  } */
 
-  body {
+  /* body {
     background: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
   }
-}
+} */ 
 
 /* animations */
 @keyframes fade-in {

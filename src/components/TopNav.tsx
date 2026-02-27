@@ -2,7 +2,7 @@ import { monda } from '@/utils/fonts';
 
 export default function TopNav() {
   return (
-    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 z-10 bg-background`}>
+    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 z-10 bg-background text-foreground`}>
       {[
         { label: "Home", href: "/" },
         { label: "Email", href: "mailto:business.adawong@gmail.com" },
@@ -22,14 +22,13 @@ export default function TopNav() {
                 pointer-events-none
                 absolute left-1/2 bottom-0
                 h-[2px] w-0
-                bg-primary
-                dark:bg-[var(--yellow)]
+                bg-[var(--yellow)]
                 transition-all duration-150 ease-out
                 group-hover:w-full
                 -translate-x-1/2  
               "
             />
-            <span className="transition-colors duration-150 group-hover:text-primary dark:group-hover:text-[var(--yellow)] font-bold">
+            <span className="transition-colors duration-150 group-hover:text-[var(--yellow)] font-bold">
               {label}
             </span>
           </span>
