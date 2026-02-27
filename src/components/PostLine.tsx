@@ -21,14 +21,19 @@ export default function PostCard({ title, href, date, number }: PostProps) {
         {/* Card content */}
         <div className={`relative h-full w-full rounded bg-background p-4 flex flex-col justify-between ${monda.className}`}>
           {/* Title */}
-          <h3 className="text-lg font-semibold leading-snug line-clamp-3">
+          <h3 className="text-xl font-semibold leading-snug line-clamp-3">
             {title}
           </h3>
 
           {/* Bottom row */}
           <div className="flex flex-row justify-between items-end text-sm font-mono opacity-80">
             <span>{year}.{month}.{day}</span>
-            <span className="text-foreground/70">#{number}</span>
+            <div className="flex items-center">
+              <div className="w-2 h-2 shrink-0 rounded-full bg-blue-500 opacity-50 group-hover:opacity-100 transition duration-200 ease-in-out mr-2"></div> 
+              <span className="text-foreground/70">#{number}</span>
+            </div>
+            
+            
           </div>
         </div>
 
