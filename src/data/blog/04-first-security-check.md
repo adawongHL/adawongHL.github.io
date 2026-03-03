@@ -1,5 +1,5 @@
 ---
-title: "What I learned running security checks on a website"
+title: "What I learnt running security checks on a website"
 description: "XSS, Session Hijacking, Web Shell"
 date: "2026-01-21"
 image: "/images/line-abstract.jpg"
