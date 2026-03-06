@@ -14,7 +14,7 @@ type ParagraphProps = ComponentProps<"p"> & {
 };
 
 export const CustomP = ({ node, ...props }: ParagraphProps) => (
-  <p className="my-7 leading-loose text-foreground lg:text-xl dark:text-foreground text-md" {...props} />
+  <p className="my-7 leading-loose text-foreground lg:text-xl md:text-xl sm:text-md dark:text-foreground" {...props} />
 )
 
 // table of contents - heading item
