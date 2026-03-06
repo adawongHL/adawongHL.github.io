@@ -65,6 +65,5 @@ After uploading the file and clicking on it, I gained access to a web shell. In 
 
 
 # Conclusion
-These weren’t fancy exploits, but they were damaging because the designers had placed implicit trust on user input. Sensitive data could be leaked and access control broken. Moving forward, this has changed how I review features: I not only consider if something works, but also what assumptions they make about user input, and what it trusts. 
-
+Although these weren't fancy exploits, results were pretty damaging with leaked data and broken access control. It goes to show that we must guard against user inputs and not trust blindly. 
 
