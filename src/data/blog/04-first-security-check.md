@@ -9,9 +9,7 @@ number: 2
 
 # Intro
 
-This post documents a few vulnerabilities I identified while running some security tests on a local copy of a web application I helped maintain. Everything was done on non-production systems, and no real user data was touched.
-
-My goal wasn’t to hack the website, but to understand attack surfaces and see how small oversights might balloon into security risks. I share certain details for educational purposes and redact any sensitive info. 
+I'm documenting some vulnerabilities I found while running security checks on a local copy of a web app I maintained. Everything was done on non-production systems so I'm not compromising real user data (important!). My goal wasn’t to hack, but to understand attack surfaces and how they might be exploited. Here, I walk through my thought process without including any sensitive details. 
 
 
 # Launching a stored XSS attack
