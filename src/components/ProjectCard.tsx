@@ -12,7 +12,7 @@ export default function ProjectCard({ title, description, image, tags }: Project
   const mainLink = tags[Object.keys(tags)[0]];
 
   return (
-    <div className="relative group rounded-lg p-4 w-full max-w-2xl transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1">
+    <div className="relative group rounded-lg p-4 w-full max-w-[580px] transition-transform duration-200 hover:translate-x-1 hover:-translate-y-1">
     <Link href={mainLink} className="w-full sm:w-auto">
       {/* Animated border */}
       <span className="pointer-events-none absolute inset-0 rounded-lg border-2 border-foreground opacity-0 scale-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
@@ -48,7 +48,7 @@ export default function ProjectCard({ title, description, image, tags }: Project
 
       </Link>
 
-      <div className="flex flex-row flex-wrap ">
+      <div className="flex flex-row flex-wrap hidden md:flex">
             {Object.entries(tags).map(([tagName, tagLink]) => (
               <Link key={tagName} href={tagLink}>
                 <span
