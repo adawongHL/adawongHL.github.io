@@ -15,7 +15,7 @@ export default function ScrollBar() {
                 left: 0,
                 width: 3,
                 height: "100vh",
-                backgroundColor: "var(--secondary)",
+                backgroundColor: "var(--foreground)",
                 transformOrigin: "0% 0%",
                 zIndex: 9999,
             }}
