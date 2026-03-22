@@ -15,6 +15,7 @@ export default function HomePage() {
   const projects = getAllProjects();
   console.log(projects);
   const blogPosts = getAllBlogPosts();
+  const visibleBlogs = blogPosts.filter(post => { return post.frontmatter.visible === true })
   // const highlightProjects = projectPosts.filter(post => {return post.frontmatter.highlight === true})
   const highlightBlogs = blogPosts.filter(post => { return post.frontmatter.highlight === true })
 
@@ -58,9 +59,9 @@ export default function HomePage() {
             <span className="h-9 w-2 mr-4 bg-secondary" />
             <h2 className={`text-3xl font-bold ${monda.className} mb-6`}>Blog</h2>
           </div>
-          {blogPosts.length > 0 ? (
+          {visibleBlogs.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {blogPosts.map(post => (
+              {visibleBlogs.map(post => (
                 <PostLine
                   key={post.slug}
                   title={post.frontmatter.title}

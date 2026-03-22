@@ -4,6 +4,7 @@ description: "Because I was tired of doing it manually"
 date: "2026-01-24"
 image: "/images/line-abstract.jpg"
 highlight: false
+visible: false
 number: 3
 ---
 

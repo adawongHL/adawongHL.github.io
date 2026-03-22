@@ -4,6 +4,7 @@ description: "How to fix bugs"
 date: "2026-01-20"
 image: "/images/line-abstract.jpg"
 highlight: false
+visible: true
 number: 1
 ---
 
