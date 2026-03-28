@@ -2,7 +2,7 @@ import { monda } from '@/utils/fonts';
 
 export default function TopNav() {
   return (
-    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 z-10 bg-background text-foreground`}>
+    <div className={`flex gap-6 my-8 h-12 items-center ${monda.className} sticky top-0 z-10 bg-background/80 text-foreground backdrop-blur`}>
       {[
         { label: "Home", href: "/" },
         { label: "Email", href: "mailto:business.adawong@gmail.com" },
