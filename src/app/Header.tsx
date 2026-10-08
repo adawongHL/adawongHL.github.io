@@ -19,20 +19,28 @@ export default function Header() {
     //   </div>
 
   // </header>
+  <div className="flex flex-col">
 
     <div className="flex mb-12 items-center animate-fade-in">
-      {/* profile */}
-      <img
-          src="/images/profile_circle.png"
-          width={150}
-          height={150}
-          className=""
-        />
-      {/* name */}
-      <div className="flex flex-col justify-center font-monda ml-2">
-        <div className="flex text-3xl font-bold items-center">Ada W.</div>
-        <p>I tinker, build and write 🏔️</p>
-      </div>
+        {/* profile */}
+        <img
+            src="/images/profile_circle.png"
+            width={150}
+            height={150}
+            className=""
+          />
+        {/* name */}
+        <div className="flex flex-col justify-center font-monda ml-2">
+          <div className="flex text-3xl font-bold items-center">Ada W.</div>
+          <div className="text-white/70">
+            <p> · CS grad, 2 years running & improving cloud production web application</p>
+            <p> · Built automation tools using Slack API</p>
+            <p> · Hands-on experience penetration testing web applications</p>
+          </div>
+
+        </div>
+    </div>
+
     </div>
   );
 }
